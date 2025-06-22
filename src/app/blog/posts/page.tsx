@@ -4,6 +4,8 @@ import { Button } from '@/app/ui/components/button';
 import Post from '@/app/ui/components/posts/Post';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
   /*const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
