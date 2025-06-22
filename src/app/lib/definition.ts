@@ -5,3 +5,10 @@ export type Post = {
   content: string;
   date: string;
 };
+
+export type User = {
+  id: string | undefined | null;
+  name: string | undefined | null;
+  email: string | undefined | null;
+  image: string | undefined | null;
+};
