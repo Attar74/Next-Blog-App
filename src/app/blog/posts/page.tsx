@@ -35,7 +35,7 @@ export default async function Page() {
             author={post.author}
             title={post.title}
             content={post.content}
-            date={post.date.toISOString()}
+            date={post.date}
             key={post.id}
           />
         ))
