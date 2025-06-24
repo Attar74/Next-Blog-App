@@ -16,20 +16,20 @@ import { SignIn, SignOut } from './auth-component';
 export default async function UserButton() {
   const session = await auth();
 
-  if (!session?.user) return <SignIn />;
+  if (!session?.user) return <SignIn variant="outlined" />;
   return (
     <div className="flex gap-2 items-center">
-      <span className="hidden text-sm sm:inline-flex">{session.user.name}</span>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="relative w-8 h-8 rounded-full">
-            <Avatar className="w-8 h-8">
+          <Button variant="ghost" className="relative w-12 h-12 rounded-full">
+            <Avatar className="w-12 h-12">
               {session.user.image && (
                 <AvatarImage
                   src={
                     session.user.image ??
                     'https://source.boringavatars.com/beam/120'
                   }
+                  className="rounded-full border-2 border-gray-200 p-1"
                   alt={session.user.name ?? ''}
                 />
               )}
@@ -51,6 +51,7 @@ export default async function UserButton() {
           <SignOut />
         </DropdownMenuContent>
       </DropdownMenu>
+      <span className="hidden text-sm sm:inline-flex">{session.user.name}</span>
     </div>
   );
 }
