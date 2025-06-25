@@ -1,5 +1,5 @@
 import { getPosts } from '@/app/lib/data';
-import Post from '@/app/ui/components/posts/Post';
+import SinglePost from '@/app/ui/components/posts/SinglePost';
 import { notFound } from 'next/navigation';
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -11,15 +11,14 @@ export default async function Page({ params }: { params: { id: string } }) {
   }
 
   return (
-    <>
-      <h1>Post</h1>
-      <Post
+    <div className="min-h-screen ">
+      <SinglePost
         id={post.id}
         title={post.title}
         author={post.author}
         content={post.content}
         date={post.date}
       />
-    </>
+    </div>
   );
 }

@@ -5,7 +5,7 @@ const shimmer =
 export function PostSkeleton() {
   return (
     <div
-      className={`${shimmer} relative overflow-hidden border border-gray-200 p-6 my-4 rounded-lg`}
+      className={`${shimmer} bg-gray-50 relative overflow-hidden border border-gray-200 p-10 my-4 rounded-lg`}
     >
       <div className="h-2 p-1 w-1/4 rounded-md bg-gray-100" />
       <div className="h-2 p-1 mt-2 w-1/6 rounded-md bg-gray-100" />

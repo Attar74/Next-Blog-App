@@ -35,3 +35,33 @@ export async function POST(request: Request) {
     return NextResponse.json({ error }, { status: 500 });
   }
 }
+
+export async function DELETE(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get('id');
+
+  const session = await auth();
+  if (!session?.user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  if (!id) {
+    return NextResponse.json({ error: 'Post ID is required' }, { status: 400 });
+  }
+
+  try {
+    // SQL query to delete a post by ID
+    const result = await sql`DELETE FROM posts WHERE id = ${id};`;
+
+    if (result.rowCount === 0) {
+      return NextResponse.json({ error: 'Post not found' }, { status: 404 });
+    }
+
+    return NextResponse.json(
+      { message: 'Post successfully deleted' },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json({ error }, { status: 500 });
+  }
+}

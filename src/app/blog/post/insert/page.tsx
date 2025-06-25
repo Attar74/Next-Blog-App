@@ -148,67 +148,109 @@ export default function Page() {
   }
 
   return (
-    <div className="bg-white p-8 rounded shadow">
-      <h2 className="text-2xl mb-4 text-purple-700">New Blog Post</h2>
-      <form onSubmit={(e) => handleSubmit(e)} className="space-y-4">
-        <div>
-          <label htmlFor="title" className="block font-medium">
-            Title:
-          </label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            className="w-full border-2 border-purple-100 p-2 rounded-md focus:border-purple-200 focus:outline-none"
-          />
+    <div className="py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-4">
+            <h1 className="text-2xl font-bold text-white">
+              Create New Blog Post
+            </h1>
+            <p className="text-purple-100 mt-1">
+              Share your thoughts with the world
+            </p>
+          </div>
+
+          <div className="p-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label
+                  htmlFor="title"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
+                  Post Title
+                </label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleChange}
+                  placeholder="Enter your blog post title..."
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200"
+                  required
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="content"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
+                  Post Content
+                </label>
+                <textarea
+                  id="content"
+                  name="content"
+                  rows={8}
+                  value={postContent}
+                  onChange={handleChange}
+                  placeholder="Write your blog post content here..."
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 resize-vertical"
+                />
+                {generating && (
+                  <div className="mt-3 flex items-center text-sm text-purple-600">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-purple-600 mr-2"></div>
+                    Generating content with AI...
+                  </div>
+                )}
+                <div className="mt-3">
+                  <Button
+                    onClick={generateContent}
+                    disabled={!formData.title || generating}
+                    className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    type="button"
+                  >
+                    {generating ? 'Generating...' : 'Generate with AI'}
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="date"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
+                  Publication Date
+                </label>
+                <input
+                  type="text"
+                  id="date"
+                  name="date"
+                  value={formData.date}
+                  readOnly
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600 cursor-not-allowed"
+                />
+              </div>
+
+              <div className="flex justify-end space-x-4 pt-6 border-t border-gray-200">
+                <Button
+                  type="button"
+                  onClick={() => router.push('/blog/posts')}
+                  className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                >
+                  Cancel
+                </Button>
+                <Button
+                  type="submit"
+                  className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200"
+                >
+                  Publish Post
+                </Button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div>
-          <label htmlFor="content" className="block font-medium">
-            Content:
-          </label>
-          <textarea
-            id="content"
-            name="content"
-            rows={4}
-            value={postContent}
-            onChange={(e) => handleChange(e)}
-            className="w-full border-2 border-purple-100 p-2 rounded-md focus:border-purple-200 focus:outline-none"
-          ></textarea>
-          {generating && (
-            <div className="mt-2 text-sm text-gray-600">Generating...</div>
-          )}
-          <Button
-            onClick={generateContent}
-            className="text-white px-4 py-2 rounded-md bg-purple-600  hover:bg-purple-700"
-            type="button"
-          >
-            Generate Content
-          </Button>
-        </div>
-        <div>
-          <label htmlFor="date" className="block font-medium">
-            Date:
-          </label>
-          <input
-            type="text"
-            id="date"
-            name="date"
-            value={formData.date}
-            readOnly
-            className="w-full border-2 border-purple-100 p-2 rounded-md focus:border-purple-200 focus:outline-none"
-          />
-        </div>
-        <div>
-          <Button
-            type="submit"
-            className="text-white px-4 py-2 rounded-md bg-purple-600  hover:bg-purple-700"
-          >
-            Submit
-          </Button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }
