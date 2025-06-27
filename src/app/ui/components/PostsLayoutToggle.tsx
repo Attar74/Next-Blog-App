@@ -23,7 +23,7 @@ export default function PostsLayoutToggle({ posts }: { posts: any[] }) {
     <div className="space-y-6">
       {/* Layout Toggle Controls */}
       <div className="flex justify-end items-center">
-        <div className="flex items-center bg-white rounded-lg shadow-sm border border-gray-200 p-1">
+        <div className="hidden lg:flex items-center bg-white rounded-lg shadow-sm border border-gray-200 p-1">
           <Button
             className={`px-3 py-2 rounded-md transition-all duration-200 ${
               layout === 'grid'
@@ -53,7 +53,7 @@ export default function PostsLayoutToggle({ posts }: { posts: any[] }) {
       <div
         className={
           layout === 'grid'
-            ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
+            ? 'grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6'
             : 'flex flex-col gap-4'
         }
       >
