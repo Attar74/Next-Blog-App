@@ -2,25 +2,25 @@
 
 const Page = () => {
   return (
-    <div className="min-h-screen ">
-      <section className="prose prose-lg max-w-4xl mx-auto py-16 px-6">
+    <div className="min-h-screen">
+      <section className="prose prose-lg max-w-4xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
             About This Project
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
         </div>
 
         {/* Introduction */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
-          <div className="text-lg leading-relaxed text-gray-700">
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex gap-2">
+        <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
+          <div className="text-base sm:text-lg leading-relaxed text-gray-700">
+            <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex flex-col sm:flex-row gap-2 items-center sm:items-start">
               <p>Hi, I'm Mahmod Attar</p>
               <img
                 src="/avatar.png"
                 alt="Mahmod Attar"
-                className="inline-block h-8 w-8 rounded-full"
+                className="inline-block h-6 w-6 sm:h-8 sm:w-8 rounded-full"
               />
             </span>
             <br />I built this small blog platform as a hands-on way to sharpen
@@ -34,49 +34,63 @@ const Page = () => {
         </div>
 
         {/* Tech Stack */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <span className="mr-3">🛠️</span>
+        <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+            <span className="mr-2 sm:mr-3">🛠️</span>
             What's Under the Hood
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="flex items-center p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl">
-              <span className="text-2xl mr-3">⚡</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div className="flex items-center p-3 sm:p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg sm:rounded-xl">
+              <span className="text-xl sm:text-2xl mr-2 sm:mr-3">⚡</span>
               <div>
-                <strong className="text-blue-800">Next.js 14.2.3</strong>
-                <p className="text-sm text-gray-600">
+                <strong className="text-blue-800 text-sm sm:text-base">
+                  Next.js 14.2.3
+                </strong>
+                <p className="text-xs sm:text-sm text-gray-600">
                   App Router + Server Actions
                 </p>
               </div>
             </div>
-            <div className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl">
-              <span className="text-2xl mr-3">🎨</span>
+            <div className="flex items-center p-3 sm:p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg sm:rounded-xl">
+              <span className="text-xl sm:text-2xl mr-2 sm:mr-3">🎨</span>
               <div>
-                <strong className="text-purple-800">Tailwind CSS 3.4</strong>
-                <p className="text-sm text-gray-600">Utility-first styling</p>
+                <strong className="text-purple-800 text-sm sm:text-base">
+                  Tailwind CSS 3.4
+                </strong>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Utility-first styling
+                </p>
               </div>
             </div>
-            <div className="flex items-center p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-xl">
-              <span className="text-2xl mr-3">🔒</span>
+            <div className="flex items-center p-3 sm:p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-lg sm:rounded-xl">
+              <span className="text-xl sm:text-2xl mr-2 sm:mr-3">🔒</span>
               <div>
-                <strong className="text-green-800">NextAuth v5</strong>
-                <p className="text-sm text-gray-600">Gmail Sign-In</p>
+                <strong className="text-green-800 text-sm sm:text-base">
+                  NextAuth v5
+                </strong>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Gmail Sign-In
+                </p>
               </div>
             </div>
-            <div className="flex items-center p-4 bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl">
-              <span className="text-2xl mr-3">🧠</span>
+            <div className="flex items-center p-3 sm:p-4 bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg sm:rounded-xl">
+              <span className="text-xl sm:text-2xl mr-2 sm:mr-3">🧠</span>
               <div>
-                <strong className="text-orange-800">
+                <strong className="text-orange-800 text-sm sm:text-base">
                   Vercel Postgres + Neon
                 </strong>
-                <p className="text-sm text-gray-600">Scalable serverless SQL</p>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Scalable serverless SQL
+                </p>
               </div>
             </div>
-            <div className="flex items-center p-4 bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl md:col-span-2">
-              <span className="text-2xl mr-3">🔧</span>
+            <div className="flex items-center p-3 sm:p-4 bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-lg sm:rounded-xl sm:col-span-2">
+              <span className="text-xl sm:text-2xl mr-2 sm:mr-3">🔧</span>
               <div>
-                <strong className="text-indigo-800">React 18</strong>
-                <p className="text-sm text-gray-600">
+                <strong className="text-indigo-800 text-sm sm:text-base">
+                  React 18
+                </strong>
+                <p className="text-xs sm:text-sm text-gray-600">
                   Zod, clsx, Radix UI, Lucide Icons
                 </p>
               </div>
@@ -85,12 +99,12 @@ const Page = () => {
         </div>
 
         {/* Key Features */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <span className="mr-3">✨</span>
+        <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+            <span className="mr-2 sm:mr-3">✨</span>
             Key Features
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {[
               { icon: '🖊️', text: 'Gmail Sign-In using NextAuth' },
               { icon: '📱', text: 'Responsive UI' },
@@ -99,10 +113,12 @@ const Page = () => {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="flex items-center p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl hover:shadow-md transition-shadow"
+                className="flex items-center p-3 sm:p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg sm:rounded-xl hover:shadow-md transition-shadow"
               >
-                <span className="text-2xl mr-3">{feature.icon}</span>
-                <span className="text-gray-700 font-medium">
+                <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                  {feature.icon}
+                </span>
+                <span className="text-gray-700 font-medium text-sm sm:text-base">
                   {feature.text}
                 </span>
               </div>
@@ -111,23 +127,23 @@ const Page = () => {
         </div>
 
         {/* Why I Built It */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <span className="mr-3">🤔</span>
+        <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+            <span className="mr-2 sm:mr-3">🤔</span>
             Why I Built It
           </h2>
-          <p className="text-lg leading-relaxed text-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl">
+          <p className="text-base sm:text-lg leading-relaxed text-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 p-4 sm:p-6 rounded-lg sm:rounded-xl">
             To deepen my understanding of modern React and Next.js, and explore
             Tailwind 4 and serverless DBs in production-like settings.
           </p>
         </div>
 
         {/* What's Next */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+        <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
             What's Next?
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {[
               { icon: '💬', text: 'Comments system' },
               { icon: '🔍', text: 'Full-text search' },
@@ -136,10 +152,14 @@ const Page = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex items-center p-4 bg-gradient-to-r from-emerald-50 to-emerald-100 rounded-xl hover:shadow-md transition-shadow"
+                className="flex items-center p-3 sm:p-4 bg-gradient-to-r from-emerald-50 to-emerald-100 rounded-lg sm:rounded-xl hover:shadow-md transition-shadow"
               >
-                <span className="text-2xl mr-3">{item.icon}</span>
-                <span className="text-gray-700 font-medium">{item.text}</span>
+                <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                  {item.icon}
+                </span>
+                <span className="text-gray-700 font-medium text-sm sm:text-base">
+                  {item.text}
+                </span>
               </div>
             ))}
           </div>

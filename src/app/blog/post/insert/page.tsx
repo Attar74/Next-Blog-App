@@ -148,20 +148,20 @@ export default function Page() {
   }
 
   return (
-    <div className="py-8 px-4 sm:px-6 lg:px-8">
+    <div className="py-4 sm:py-8 px-3 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-4">
-            <h1 className="text-2xl font-bold text-white">
+          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-4 sm:px-6 py-3 sm:py-4">
+            <h1 className="text-xl sm:text-2xl font-bold text-white">
               Create New Blog Post
             </h1>
-            <p className="text-purple-100 mt-1">
+            <p className="text-purple-100 mt-1 text-sm sm:text-base">
               Share your thoughts with the world
             </p>
           </div>
 
-          <div className="p-6">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="p-4 sm:p-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
                 <label
                   htmlFor="title"
@@ -176,7 +176,7 @@ export default function Page() {
                   value={formData.title}
                   onChange={handleChange}
                   placeholder="Enter your blog post title..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 text-sm sm:text-base"
                   required
                 />
               </div>
@@ -191,11 +191,11 @@ export default function Page() {
                 <textarea
                   id="content"
                   name="content"
-                  rows={8}
+                  rows={6}
                   value={postContent}
                   onChange={handleChange}
                   placeholder="Write your blog post content here..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 resize-vertical"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 resize-vertical text-sm sm:text-base"
                 />
                 {generating && (
                   <div className="mt-3 flex items-center text-sm text-purple-600">
@@ -203,16 +203,18 @@ export default function Page() {
                     Generating content with AI...
                   </div>
                 )}
-                <div className="mt-3 flex items-center gap-2">
+                <div className="mt-3 flex flex-col sm:flex-row sm:items-center gap-2">
                   <Button
                     onClick={generateContent}
                     disabled={!formData.title || generating || true}
-                    className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 sm:px-6 py-2 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base w-full sm:w-auto"
                     type="button"
                   >
                     {generating ? 'Generating...' : 'Generate with AI'}
                   </Button>
-                  <span className="text-sm text-gray-500">(comming soon)</span>
+                  <span className="text-sm text-gray-500 text-center sm:text-left">
+                    (coming soon)
+                  </span>
                 </div>
               </div>
 
@@ -230,22 +232,22 @@ export default function Page() {
                     name="date"
                     value={new Date().toISOString()}
                     readOnly
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600 cursor-not-allowed"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600 cursor-not-allowed text-sm sm:text-base"
                   />
                 </div>
               )}
 
-              <div className="flex justify-end space-x-4 pt-6 border-t border-gray-200">
+              <div className="flex flex-col sm:flex-row justify-end gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-gray-200">
                 <Button
                   type="button"
                   onClick={() => router.push('/blog/posts')}
-                  className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                  className="px-4 sm:px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-sm sm:text-base w-full sm:w-auto order-2 sm:order-1"
                 >
                   Cancel
                 </Button>
                 <Button
                   type="submit"
-                  className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200"
+                  className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 sm:px-6 py-2 rounded-lg font-medium transition-all duration-200 text-sm sm:text-base w-full sm:w-auto order-1 sm:order-2"
                 >
                   Publish Post
                 </Button>

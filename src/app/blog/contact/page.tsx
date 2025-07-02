@@ -1,24 +1,24 @@
 const Page = () => {
   return (
-    <div className="min-h-screen ">
-      <section className="prose prose-lg max-w-4xl mx-auto py-16 px-6">
+    <div className="min-h-screen">
+      <section className="prose prose-lg max-w-4xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
             Get In Touch
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
         </div>
 
         {/* Introduction */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
-          <div className="text-lg leading-relaxed text-gray-700">
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex gap-2">
+        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
+          <div className="text-base sm:text-lg leading-relaxed text-gray-700">
+            <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex flex-col sm:flex-row gap-2 items-center sm:items-start">
               <p>Let's Connect!</p>
               <img
                 src="/avatar.png"
                 alt="Mahmod Attar"
-                className="inline-block h-8 w-8 rounded-full"
+                className="inline-block h-6 w-6 sm:h-8 sm:w-8 rounded-full"
               />
             </span>
             <br />
@@ -29,21 +29,21 @@ const Page = () => {
         </div>
 
         {/* Contact Methods */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <span className="mr-3">💬</span>
+        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+            <span className="mr-2 sm:mr-3">💬</span>
             Contact Methods
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <a
               href="https://wa.me/+31653209256"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-6 bg-gradient-to-r from-green-50 to-green-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-green-200"
+              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-green-50 to-green-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-green-200"
             >
-              <span className="text-3xl mr-4">
+              <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-green-600"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -51,8 +51,10 @@ const Page = () => {
                 </svg>
               </span>
               <div>
-                <strong className="text-green-800 text-lg">WhatsApp</strong>
-                <p className="text-sm text-gray-600">
+                <strong className="text-green-800 text-base sm:text-lg">
+                  WhatsApp
+                </strong>
+                <p className="text-xs sm:text-sm text-gray-600">
                   Quick chat & voice messages
                 </p>
                 <p className="text-xs text-green-600 mt-1">Available 24/7</p>
@@ -63,11 +65,11 @@ const Page = () => {
               href="https://www.linkedin.com/in/attar74/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-blue-200"
+              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-blue-200"
             >
-              <span className="text-3xl mr-4">
+              <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
                 <svg
-                  className="w-8 h-8 text-blue-600"
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -75,8 +77,12 @@ const Page = () => {
                 </svg>
               </span>
               <div>
-                <strong className="text-blue-800 text-lg">LinkedIn</strong>
-                <p className="text-sm text-gray-600">Professional network</p>
+                <strong className="text-blue-800 text-base sm:text-lg">
+                  LinkedIn
+                </strong>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Professional network
+                </p>
                 <p className="text-xs text-blue-600 mt-1">
                   Connect & collaborate
                 </p>
@@ -87,11 +93,11 @@ const Page = () => {
               href="https://github.com/attar74"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-200"
+              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-200"
             >
-              <span className="text-3xl mr-4">
+              <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
                 <svg
-                  className="w-8 h-8 text-gray-600"
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-gray-600"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -99,8 +105,12 @@ const Page = () => {
                 </svg>
               </span>
               <div>
-                <strong className="text-gray-800 text-lg">GitHub</strong>
-                <p className="text-sm text-gray-600">Code & projects</p>
+                <strong className="text-gray-800 text-base sm:text-lg">
+                  GitHub
+                </strong>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Code & projects
+                </p>
                 <p className="text-xs text-gray-600 mt-1">
                   Open source contributions
                 </p>
@@ -109,11 +119,11 @@ const Page = () => {
 
             <a
               href="mailto:m.elattar.dev@gmail.com"
-              className="flex items-center p-6 bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-purple-200"
+              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-purple-200"
             >
-              <span className="text-3xl mr-4">
+              <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
                 <svg
-                  className="w-8 h-8 text-purple-600"
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -121,9 +131,13 @@ const Page = () => {
                 </svg>
               </span>
               <div>
-                <strong className="text-purple-800 text-lg">Email</strong>
-                <p className="text-sm text-gray-600">Formal communication</p>
-                <p className="text-xs text-purple-600 mt-1">
+                <strong className="text-purple-800 text-base sm:text-lg">
+                  Email
+                </strong>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Formal communication
+                </p>
+                <p className="text-xs text-purple-600 mt-1 break-all">
                   m.elattar.dev@gmail.com
                 </p>
               </div>
@@ -132,37 +146,47 @@ const Page = () => {
         </div>
 
         {/* Response Time */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <span className="mr-3">⏱️</span>
+        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+            <span className="mr-2 sm:mr-3">⏱️</span>
             Response Time
           </h2>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="text-center p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-xl">
-              <span className="text-2xl">⚡</span>
-              <p className="font-semibold text-green-800 mt-2">WhatsApp</p>
-              <p className="text-sm text-gray-600">Within minutes</p>
+              <span className="text-xl sm:text-2xl">⚡</span>
+              <p className="font-semibold text-green-800 mt-2 text-sm sm:text-base">
+                WhatsApp
+              </p>
+              <p className="text-xs sm:text-sm text-gray-600">Within minutes</p>
             </div>
             <div className="text-center p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl">
-              <span className="text-2xl">📱</span>
-              <p className="font-semibold text-blue-800 mt-2">LinkedIn</p>
-              <p className="text-sm text-gray-600">Within 24 hours</p>
+              <span className="text-xl sm:text-2xl">📱</span>
+              <p className="font-semibold text-blue-800 mt-2 text-sm sm:text-base">
+                LinkedIn
+              </p>
+              <p className="text-xs sm:text-sm text-gray-600">
+                Within 24 hours
+              </p>
             </div>
-            <div className="text-center p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl">
-              <span className="text-2xl">📧</span>
-              <p className="font-semibold text-purple-800 mt-2">Email</p>
-              <p className="text-sm text-gray-600">Within 48 hours</p>
+            <div className="text-center p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl sm:col-span-2 lg:col-span-1">
+              <span className="text-xl sm:text-2xl">📧</span>
+              <p className="font-semibold text-purple-800 mt-2 text-sm sm:text-base">
+                Email
+              </p>
+              <p className="text-xs sm:text-sm text-gray-600">
+                Within 48 hours
+              </p>
             </div>
           </div>
         </div>
 
         {/* Best Time to Contact */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <span className="mr-3">⏱️</span>
+        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+            <span className="mr-2 sm:mr-3">⏱️</span>
             Best Time to Reach Me
           </h2>
-          <p className="text-lg leading-relaxed text-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl">
+          <p className="text-base sm:text-lg leading-relaxed text-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 p-4 sm:p-6 rounded-xl">
             I'm most active during <strong>9 AM - 6 PM (GMT+3)</strong>. For
             urgent matters, WhatsApp is your best bet. For project discussions
             or collaborations, LinkedIn or email work great!
@@ -170,12 +194,12 @@ const Page = () => {
         </div>
 
         {/* Let's Work Together */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <span className="mr-3">🚀</span>
+        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+            <span className="mr-2 sm:mr-3">🚀</span>
             Let's Work Together
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {[
               { icon: '💡', text: 'Project collaboration' },
               { icon: '💼', text: 'Technical consulting' },
@@ -184,10 +208,14 @@ const Page = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex items-center p-4 bg-gradient-to-r from-emerald-50 to-emerald-100 rounded-xl hover:shadow-md transition-shadow"
+                className="flex items-center p-3 sm:p-4 bg-gradient-to-r from-emerald-50 to-emerald-100 rounded-xl hover:shadow-md transition-shadow"
               >
-                <span className="text-2xl mr-3">{item.icon}</span>
-                <span className="text-gray-700 font-medium">{item.text}</span>
+                <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
+                  {item.icon}
+                </span>
+                <span className="text-gray-700 font-medium text-sm sm:text-base">
+                  {item.text}
+                </span>
               </div>
             ))}
           </div>
