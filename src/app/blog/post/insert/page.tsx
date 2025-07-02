@@ -19,7 +19,6 @@ export default function Page() {
     id: '',
     title: '',
     content: '',
-    date: new Date().toISOString(),
   });
 
   const generateContent = async () => {
@@ -104,7 +103,9 @@ export default function Page() {
     fetch(
       `/api/posts?id=${uuid}&title=${formData.title}&content=${
         content || formData.content
-      }&date=${formData.date}&author=${user?.name}`,
+      }&date=${new Date().toISOString()}&author=${user?.name}&email=${
+        user?.email
+      }`,
       {
         method: 'POST',
         headers: {
@@ -119,7 +120,6 @@ export default function Page() {
           id: '',
           title: '',
           content: '',
-          date: new Date().toISOString(),
         });
         router.push('/blog/posts');
       })
@@ -203,34 +203,37 @@ export default function Page() {
                     Generating content with AI...
                   </div>
                 )}
-                <div className="mt-3">
+                <div className="mt-3 flex items-center gap-2">
                   <Button
                     onClick={generateContent}
-                    disabled={!formData.title || generating}
+                    disabled={!formData.title || generating || true}
                     className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                     type="button"
                   >
                     {generating ? 'Generating...' : 'Generate with AI'}
                   </Button>
+                  <span className="text-sm text-gray-500">(comming soon)</span>
                 </div>
               </div>
 
-              <div>
-                <label
-                  htmlFor="date"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Publication Date
-                </label>
-                <input
-                  type="text"
-                  id="date"
-                  name="date"
-                  value={formData.date}
-                  readOnly
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600 cursor-not-allowed"
-                />
-              </div>
+              {false && (
+                <div>
+                  <label
+                    htmlFor="date"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
+                  >
+                    Publication Date
+                  </label>
+                  <input
+                    type="text"
+                    id="date"
+                    name="date"
+                    value={new Date().toISOString()}
+                    readOnly
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600 cursor-not-allowed"
+                  />
+                </div>
+              )}
 
               <div className="flex justify-end space-x-4 pt-6 border-t border-gray-200">
                 <Button

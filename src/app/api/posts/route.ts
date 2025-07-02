@@ -18,15 +18,16 @@ export async function POST(request: Request) {
   const content = searchParams.get('content');
   const date = searchParams.get('date');
   const author = searchParams.get('author');
+  const email = searchParams.get('email');
 
   const session = await auth();
-  if (!session?.user) {
+  if (!session?.user || session?.user?.email !== email) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {
     // SQL query to insert a new post
-    await sql`INSERT INTO posts (id, author, title, content, date) VALUES (${id}, ${author}, ${title}, ${content}, ${date});`;
+    await sql`INSERT INTO posts (id, author, title, content, date, email) VALUES (${id}, ${author}, ${title}, ${content}, ${date}, ${email});`;
     return NextResponse.json(
       { message: 'Post successfully inserted' },
       { status: 200 }
@@ -39,9 +40,10 @@ export async function POST(request: Request) {
 export async function DELETE(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get('id');
+  const email = searchParams.get('email');
 
   const session = await auth();
-  if (!session?.user) {
+  if (!session?.user || session?.user?.email !== email) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

@@ -18,6 +18,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         author={post.author}
         content={post.content}
         date={post.date}
+        email={post.email}
       />
     </div>
   );

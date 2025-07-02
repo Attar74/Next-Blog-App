@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <SideNav />
         </div>
         <div className="flex-grow p-6 md:overflow-y-auto px-12 py-6">
-          <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg">
+          <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg h-full">
             {children}
           </div>
         </div>

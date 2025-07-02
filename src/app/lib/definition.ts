@@ -4,6 +4,7 @@ export type Post = {
   title: string;
   content: string;
   date: string;
+  email: string;
 };
 
 export type User = {

@@ -1,4 +1,4 @@
-import { ConnectToDB, getPosts } from '@/app/lib/data';
+import { ConnectToDB, getPostsByUser } from '@/app/lib/data';
 import { Button } from '@/app/ui/components/button';
 import PostsLayoutToggle from '@/app/ui/components/PostsLayoutToggle';
 import Link from 'next/link';
@@ -8,8 +8,8 @@ export const dynamic = 'force-dynamic';
 
 export default async function Page() {
   const client = await ConnectToDB();
-  const posts = await getPosts();
   const session = await auth();
+  const posts = await getPostsByUser(session);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -17,7 +17,7 @@ export default async function Page() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
         <div className="flex items-center gap-3">
           <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-            Blog Posts
+            My Blogs
           </h1>
         </div>
 
@@ -51,7 +51,7 @@ export default async function Page() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-gray-700 mb-2">
-              No posts found
+              No Blogs found
             </h3>
             <p className="text-gray-500">
               Start writing your first blog post to get started!

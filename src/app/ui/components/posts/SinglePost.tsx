@@ -1,20 +1,26 @@
+import { formatDate } from '@/lib/utils/dateUtils';
 import Link from 'next/link';
-
+import { auth } from '../../../../../auth-config';
+import CopyLinkButton from './CopyLinkButton';
+import DeletePostButton from './DeletePostButton';
 interface SinglePostProps {
   id: string;
   title: string;
   author: string;
   content: string;
   date: string;
+  email: string;
 }
 
-export default function SinglePost({
+export default async function SinglePost({
   id,
   title,
   author,
+  email,
   content,
   date,
 }: SinglePostProps) {
+  const session = await auth();
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header Section */}
@@ -52,7 +58,9 @@ export default function SinglePost({
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="text-sm font-medium text-gray-700">{date}</span>
+              <span className="text-sm font-medium text-gray-700">
+                {formatDate(date)}
+              </span>
             </span>
           </div>
         </div>
@@ -71,9 +79,15 @@ export default function SinglePost({
 
       {/* Footer Section */}
       <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <span className="px-3 py-2 bg-white rounded-lg shadow-md border border-gray-200 font-mono text-xs text-gray-600">
-          ID: {id}
-        </span>
+        <div className="flex items-center gap-3">
+          <span className="px-3 py-2 bg-white rounded-lg shadow-md border border-gray-200 font-mono text-xs text-gray-600">
+            ID: {id}
+          </span>
+          <CopyLinkButton postId={id} />
+          {email === session?.user?.email && (
+            <DeletePostButton postId={id} email={email || ''} />
+          )}
+        </div>
         <Link
           href="/blog/posts"
           className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"

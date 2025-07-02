@@ -1,5 +1,5 @@
-const { db } = require("@vercel/postgres");
-const { posts } = require("../src/app/lib/placeholder-data.js");
+const { db } = require('@vercel/postgres');
+const { posts } = require('../src/app/lib/placeholder-data.js');
 
 async function seedPosts(client) {
   try {
@@ -11,7 +11,8 @@ async function seedPosts(client) {
         author VARCHAR(255) NOT NULL,
         title VARCHAR(255) NOT NULL UNIQUE,
         content TEXT NOT NULL,
-        date TEXT NOT NULL
+          date TEXT NOT NULL,
+        email VARCHAR(255) NOT NULL
       );
     `;
 
@@ -21,8 +22,8 @@ async function seedPosts(client) {
     const insertedPosts = await Promise.all(
       posts.map(async (post) => {
         return client.sql`
-        INSERT INTO posts (id, title, content, date, author)
-        VALUES (${post.id}, ${post.title}, ${post.content}, ${post.date}, ${post.user})
+        INSERT INTO posts (id, title, content, date, author, email)
+        VALUES (${post.id}, ${post.title}, ${post.content}, ${post.date}, ${post.user}, ${post.email})
         ON CONFLICT (id) DO NOTHING;
       `;
       })
@@ -34,7 +35,7 @@ async function seedPosts(client) {
       posts: insertedPosts,
     };
   } catch (error) {
-    console.error("Error seeding posts:", error);
+    console.error('Error seeding posts:', error);
     throw error;
   }
 }
@@ -47,7 +48,7 @@ async function main() {
 
 main().catch((err) => {
   console.error(
-    "An error occurred while attempting to seed the database:",
+    'An error occurred while attempting to seed the database:',
     err
   );
 });

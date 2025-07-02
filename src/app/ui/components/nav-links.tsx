@@ -1,8 +1,9 @@
 'use client';
 import {
-  DocumentDuplicateIcon,
+  BookOpenIcon,
   EnvelopeIcon,
   UserGroupIcon,
+  UserIcon,
 } from '@heroicons/react/24/outline';
 
 // Map of links to display in the side navigation.
@@ -10,22 +11,45 @@ import {
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 const links = [
   /* { name: 'Home', href: '/', icon: HomeIcon },*/
   {
-    name: 'Posts',
+    name: 'All Blogs',
     href: '/blog/posts',
-    icon: DocumentDuplicateIcon,
+    icon: BookOpenIcon,
+    requireAuth: false,
   },
-  { name: 'About', href: '/blog/about', icon: UserGroupIcon },
-  { name: 'Contact', href: '/blog/contact', icon: EnvelopeIcon },
+  {
+    name: 'About',
+    href: '/blog/about',
+    icon: UserGroupIcon,
+    requireAuth: false,
+  },
+  {
+    name: 'Contact',
+    href: '/blog/contact',
+    icon: EnvelopeIcon,
+    requireAuth: false,
+  },
+  {
+    name: 'My Blogs',
+    href: '/blog/my-blogs',
+    icon: UserIcon,
+    requireAuth: true,
+  },
 ];
 
-export default function NavLinks() {
+export default function NavLinks({ session }: { session: any }) {
   const pathname = usePathname();
+
+  // Filter links based on authentication status
+  const filteredLinks = links.filter((link) => {
+    return link.requireAuth && !session?.user ? false : true;
+  });
   return (
     <>
-      {links.map((link) => {
+      {filteredLinks.map((link) => {
         const LinkIcon = link.icon;
         return (
           <Link

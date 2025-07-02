@@ -20,6 +20,20 @@ export async function getPosts() {
   noStore();
   try {
     const posts = await sql`SELECT * FROM posts`;
+    console.log(posts.rows);
+    return posts.rows;
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    throw error;
+  }
+}
+
+export async function getPostsByUser(session: any) {
+  noStore();
+  try {
+    const posts =
+      await sql`SELECT * FROM posts WHERE author = ${session?.user?.name}`;
+    console.log(posts.rows);
     return posts.rows;
   } catch (error) {
     console.error('Error fetching posts:', error);

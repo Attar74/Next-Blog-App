@@ -5,19 +5,14 @@ import Post from '@/app/ui/components/posts/Post';
 import { LayoutGrid, List } from 'lucide-react';
 import { useState } from 'react';
 
-export default function PostsLayoutToggle({ posts }: { posts: any[] }) {
+export default function PostsLayoutToggle({
+  posts,
+  session,
+}: {
+  posts: any[];
+  session: any;
+}) {
   const [layout, setLayout] = useState<'grid' | 'list'>('grid');
-
-  const handleDelete = async (id: string) => {
-    try {
-      // Call backend API to delete from DB
-      await fetch(`/api/posts?id=${id}`, {
-        method: 'DELETE',
-      });
-    } catch (err) {
-      console.error('Failed to delete post:', err);
-    }
-  };
 
   return (
     <div className="space-y-6">
@@ -53,7 +48,7 @@ export default function PostsLayoutToggle({ posts }: { posts: any[] }) {
       <div
         className={
           layout === 'grid'
-            ? 'grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6'
+            ? 'grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6'
             : 'flex flex-col gap-4'
         }
       >
@@ -65,7 +60,8 @@ export default function PostsLayoutToggle({ posts }: { posts: any[] }) {
             title={post.title}
             content={post.content}
             date={post.date}
-            onDelete={handleDelete}
+            email={post.email}
+            session={session}
           />
         ))}
       </div>
