@@ -32,7 +32,7 @@ export async function getPostsByUser(session: any) {
   noStore();
   try {
     const posts =
-      await sql`SELECT * FROM posts WHERE author = ${session?.user?.name}`;
+      await sql`SELECT * FROM posts WHERE email = ${session?.user?.email}`;
     console.log(posts.rows);
     return posts.rows;
   } catch (error) {
