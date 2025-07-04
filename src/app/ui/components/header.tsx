@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+import ActionsList from './actions-list';
 
 const socialLinks = [
   {
@@ -68,8 +69,8 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="bg-white shadow-lg border-b border-gray-200">
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="shadow-lg border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
@@ -81,16 +82,19 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center gap-4 bg-white dark:bg-gray-800">
+            {/* Actions List */}
+            <ActionsList />
+
             {/* Social Links */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center gap-4">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-lg text-gray-600 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 transition-all duration-200 transform hover:scale-105"
+                  className="flex items-center justify-center w-10 h-10 rounded-lg text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 transition-all duration-200 transform hover:scale-105"
                   title={link.name}
                 >
                   {link.icon}
@@ -100,11 +104,11 @@ export default function Header() {
           </nav>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden bg-white dark:bg-gray-800">
             <button
               ref={menuButtonRef}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-600 hover:text-purple-600 hover:bg-gradient-to-r hover:from-purple-50 hover:to-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 transition-all duration-200 transform hover:scale-105"
+              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-purple-600 hover:bg-gradient-to-r hover:from-purple-50 hover:to-blue-50 dark:hover:from-purple-900/50 dark:hover:to-blue-900/50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 transition-all duration-200 transform hover:scale-105"
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen}
               onClick={toggleMobileMenu}
@@ -154,7 +158,7 @@ export default function Header() {
         <div
           ref={mobileMenuRef}
           className={clsx(
-            'md:hidden bg-white absolute top-16 left-0 right-0 z-50 shadow-xl border-b border-gray-200 transition-all duration-300 ease-in-out transform',
+            'md:hidden  absolute top-16 left-0 right-0 z-50 shadow-xl border-b border-gray-200 transition-all duration-300 ease-in-out transform bg-white dark:bg-gray-800',
             {
               'opacity-100 translate-y-0': isMobileMenuOpen,
               'opacity-0 -translate-y-2 pointer-events-none': !isMobileMenuOpen,
@@ -162,7 +166,7 @@ export default function Header() {
           )}
           id="mobile-menu"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-row gap-2 justify-between">
             {/* Mobile Social Links */}
             <div className="flex items-center space-x-4 px-4 py-3">
               {socialLinks.map((link) => (
@@ -178,6 +182,11 @@ export default function Header() {
                   {link.icon}
                 </a>
               ))}
+            </div>
+
+            <div className="flex flex-row gap-2 my-auto justify-end">
+              {/* Actions List */}
+              <ActionsList />
             </div>
           </div>
         </div>

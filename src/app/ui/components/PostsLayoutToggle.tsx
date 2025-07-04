@@ -18,12 +18,12 @@ export default function PostsLayoutToggle({
     <div className="space-y-6">
       {/* Layout Toggle Controls */}
       <div className="flex justify-end items-center">
-        <div className="hidden lg:flex items-center bg-white rounded-lg shadow-sm border border-gray-200 p-1">
+        <div className="hidden lg:flex items-center rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-1 bg-white dark:bg-gray-800">
           <Button
             className={`px-3 py-2 rounded-md transition-all duration-200 ${
               layout === 'grid'
-                ? 'bg-purple-100 text-purple-700 shadow-sm'
-                : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                ? 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 shadow-sm'
+                : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700'
             }`}
             onClick={() => setLayout('grid')}
             variant="ghost"
@@ -33,8 +33,8 @@ export default function PostsLayoutToggle({
           <Button
             className={`px-3 py-2 rounded-md transition-all duration-200 ${
               layout === 'list'
-                ? 'bg-purple-100 text-purple-700 shadow-sm'
-                : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                ? 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 shadow-sm'
+                : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700'
             }`}
             onClick={() => setLayout('list')}
             variant="ghost"

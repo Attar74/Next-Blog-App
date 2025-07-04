@@ -30,7 +30,7 @@ export default async function SinglePost({
         </h1>
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
-            <span className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white rounded-lg shadow-md border border-gray-200 w-full sm:w-auto justify-center sm:justify-start">
+            <span className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 w-full sm:w-auto justify-center sm:justify-start">
               <svg
                 className="w-4 h-4 text-purple-600 flex-shrink-0"
                 fill="currentColor"
@@ -42,11 +42,11 @@ export default async function SinglePost({
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="text-sm font-medium text-gray-700 truncate">
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300 truncate">
                 {author}
               </span>
             </span>
-            <span className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white rounded-lg shadow-md border border-gray-200 w-full sm:w-auto justify-center sm:justify-start">
+            <span className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 w-full sm:w-auto justify-center sm:justify-start">
               <svg
                 className="w-4 h-4 text-blue-600 flex-shrink-0"
                 fill="currentColor"
@@ -58,7 +58,7 @@ export default async function SinglePost({
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 {formatDate(date)}
               </span>
             </span>
@@ -67,10 +67,10 @@ export default async function SinglePost({
       </div>
 
       {/* Content Section */}
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+      <div className="rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden">
         <div className="p-4 sm:p-6 md:p-8">
-          <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
-            <div className="text-gray-800 leading-relaxed whitespace-pre-wrap text-sm sm:text-base">
+          <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none dark:prose-invert">
+            <div className="text-gray-800 dark:text-gray-200 leading-relaxed whitespace-pre-wrap text-sm sm:text-base">
               {content}
             </div>
           </div>
@@ -80,7 +80,7 @@ export default async function SinglePost({
       {/* Footer Section */}
       <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full sm:w-auto">
-          <span className="px-3 py-2 bg-white rounded-lg shadow-md border border-gray-200 font-mono text-xs text-gray-600 w-full sm:w-auto text-center sm:text-left">
+          <span className="p-3 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 font-mono text-xs text-gray-600 dark:text-gray-400 w-full sm:w-auto text-center sm:text-left">
             ID: {id}
           </span>
           <div className="flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start">

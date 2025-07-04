@@ -1,7 +1,7 @@
 const Page = () => {
   return (
-    <div className="min-h-screen">
-      <section className="prose prose-lg max-w-4xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6">
+    <div className="min-h-screen dark:bg-gray-900">
+      <section className="prose prose-lg dark:prose-invert max-w-4xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
@@ -11,8 +11,8 @@ const Page = () => {
         </div>
 
         {/* Introduction */}
-        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
-          <div className="text-base sm:text-lg leading-relaxed text-gray-700">
+        <div className="rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 mb-6 sm:mb-8">
+          <div className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex flex-col sm:flex-row gap-2 items-center sm:items-start">
               <p>Let's Connect!</p>
               <img
@@ -29,8 +29,8 @@ const Page = () => {
         </div>
 
         {/* Contact Methods */}
-        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+        <div className="rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4 sm:mb-6 flex items-center">
             <span className="mr-2 sm:mr-3">💬</span>
             Contact Methods
           </h2>
@@ -39,11 +39,11 @@ const Page = () => {
               href="https://wa.me/+31653209256"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-green-50 to-green-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-green-200"
+              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/50 dark:to-green-800/50 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-green-200 dark:border-green-700"
             >
               <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
                 <svg
-                  className="w-6 h-6 sm:w-8 sm:h-8 text-green-600"
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 dark:text-green-400"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -51,13 +51,15 @@ const Page = () => {
                 </svg>
               </span>
               <div>
-                <strong className="text-green-800 text-base sm:text-lg">
+                <strong className="text-green-800 dark:text-green-300 text-base sm:text-lg">
                   WhatsApp
                 </strong>
-                <p className="text-xs sm:text-sm text-gray-600">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                   Quick chat & voice messages
                 </p>
-                <p className="text-xs text-green-600 mt-1">Available 24/7</p>
+                <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                  Available 24/7
+                </p>
               </div>
             </a>
 
@@ -65,11 +67,11 @@ const Page = () => {
               href="https://www.linkedin.com/in/attar74/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-blue-200"
+              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/50 dark:to-blue-800/50 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-blue-200 dark:border-blue-700"
             >
               <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
                 <svg
-                  className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600"
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 dark:text-blue-400"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -77,13 +79,13 @@ const Page = () => {
                 </svg>
               </span>
               <div>
-                <strong className="text-blue-800 text-base sm:text-lg">
+                <strong className="text-blue-800 dark:text-blue-300 text-base sm:text-lg">
                   LinkedIn
                 </strong>
-                <p className="text-xs sm:text-sm text-gray-600">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                   Professional network
                 </p>
-                <p className="text-xs text-blue-600 mt-1">
+                <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">
                   Connect & collaborate
                 </p>
               </div>
@@ -93,11 +95,11 @@ const Page = () => {
               href="https://github.com/attar74"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-200"
+              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-600 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-gray-200 dark:border-gray-600"
             >
               <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
                 <svg
-                  className="w-6 h-6 sm:w-8 sm:h-8 text-gray-600"
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-gray-600 dark:text-gray-400"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -105,13 +107,13 @@ const Page = () => {
                 </svg>
               </span>
               <div>
-                <strong className="text-gray-800 text-base sm:text-lg">
+                <strong className="text-gray-800 dark:text-gray-200 text-base sm:text-lg">
                   GitHub
                 </strong>
-                <p className="text-xs sm:text-sm text-gray-600">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                   Code & projects
                 </p>
-                <p className="text-xs text-gray-600 mt-1">
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
                   Open source contributions
                 </p>
               </div>
@@ -119,11 +121,11 @@ const Page = () => {
 
             <a
               href="mailto:m.elattar.dev@gmail.com"
-              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-purple-200"
+              className="flex items-center p-4 sm:p-6 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/50 dark:to-purple-800/50 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 border border-purple-200 dark:border-purple-700"
             >
               <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
                 <svg
-                  className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600"
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600 dark:text-purple-400"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -131,13 +133,13 @@ const Page = () => {
                 </svg>
               </span>
               <div>
-                <strong className="text-purple-800 text-base sm:text-lg">
+                <strong className="text-purple-800 dark:text-purple-300 text-base sm:text-lg">
                   Email
                 </strong>
-                <p className="text-xs sm:text-sm text-gray-600">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                   Formal communication
                 </p>
-                <p className="text-xs text-purple-600 mt-1 break-all">
+                <p className="text-xs text-purple-600 dark:text-purple-400 mt-1 break-all">
                   m.elattar.dev@gmail.com
                 </p>
               </div>
@@ -146,34 +148,36 @@ const Page = () => {
         </div>
 
         {/* Response Time */}
-        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+        <div className="rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4 sm:mb-6 flex items-center">
             <span className="mr-2 sm:mr-3">⏱️</span>
             Response Time
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="text-center p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-xl">
+            <div className="text-center p-4 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/50 dark:to-green-800/50 rounded-xl border border-green-200 dark:border-green-700">
               <span className="text-xl sm:text-2xl">⚡</span>
-              <p className="font-semibold text-green-800 mt-2 text-sm sm:text-base">
+              <p className="font-semibold text-green-800 dark:text-green-300 mt-2 text-sm sm:text-base">
                 WhatsApp
               </p>
-              <p className="text-xs sm:text-sm text-gray-600">Within minutes</p>
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                Within minutes
+              </p>
             </div>
-            <div className="text-center p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl">
+            <div className="text-center p-4 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/50 dark:to-blue-800/50 rounded-xl border border-blue-200 dark:border-blue-700">
               <span className="text-xl sm:text-2xl">📱</span>
-              <p className="font-semibold text-blue-800 mt-2 text-sm sm:text-base">
+              <p className="font-semibold text-blue-800 dark:text-blue-300 mt-2 text-sm sm:text-base">
                 LinkedIn
               </p>
-              <p className="text-xs sm:text-sm text-gray-600">
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                 Within 24 hours
               </p>
             </div>
-            <div className="text-center p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl sm:col-span-2 lg:col-span-1">
+            <div className="text-center p-4 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/50 dark:to-purple-800/50 rounded-xl sm:col-span-2 lg:col-span-1 border border-purple-200 dark:border-purple-700">
               <span className="text-xl sm:text-2xl">📧</span>
-              <p className="font-semibold text-purple-800 mt-2 text-sm sm:text-base">
+              <p className="font-semibold text-purple-800 dark:text-purple-300 mt-2 text-sm sm:text-base">
                 Email
               </p>
-              <p className="text-xs sm:text-sm text-gray-600">
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                 Within 48 hours
               </p>
             </div>
@@ -181,12 +185,12 @@ const Page = () => {
         </div>
 
         {/* Best Time to Contact */}
-        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 mb-6 sm:mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+        <div className="rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4 sm:mb-6 flex items-center">
             <span className="mr-2 sm:mr-3">⏱️</span>
             Best Time to Reach Me
           </h2>
-          <p className="text-base sm:text-lg leading-relaxed text-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 p-4 sm:p-6 rounded-xl">
+          <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 p-4 sm:p-6 rounded-xl">
             I'm most active during <strong>9 AM - 6 PM (GMT+3)</strong>. For
             urgent matters, WhatsApp is your best bet. For project discussions
             or collaborations, LinkedIn or email work great!
@@ -194,8 +198,8 @@ const Page = () => {
         </div>
 
         {/* Let's Work Together */}
-        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center">
+        <div className="rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4 sm:mb-6 flex items-center">
             <span className="mr-2 sm:mr-3">🚀</span>
             Let's Work Together
           </h2>
@@ -208,12 +212,12 @@ const Page = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex items-center p-3 sm:p-4 bg-gradient-to-r from-emerald-50 to-emerald-100 rounded-xl hover:shadow-md transition-shadow"
+                className="flex items-center p-3 sm:p-4 bg-gradient-to-r from-emerald-50 to-emerald-100 dark:from-emerald-900/50 dark:to-emerald-800/50 rounded-xl hover:shadow-md transition-shadow border border-emerald-200 dark:border-emerald-700"
               >
                 <span className="text-xl sm:text-2xl mr-2 sm:mr-3">
                   {item.icon}
                 </span>
-                <span className="text-gray-700 font-medium text-sm sm:text-base">
+                <span className="text-gray-700 dark:text-gray-300 font-medium text-sm sm:text-base">
                   {item.text}
                 </span>
               </div>

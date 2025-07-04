@@ -71,7 +71,7 @@ export default async function UserButton() {
           width={40}
           height={40}
         />
-        <span className="hidden text-sm sm:inline-flex">
+        <span className="hidden text-sm sm:inline-flex dark:text-white">
           {session.user.name}
         </span>
       </div>

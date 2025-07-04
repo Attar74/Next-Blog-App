@@ -5,11 +5,11 @@ const shimmer =
 export function PostSkeleton() {
   return (
     <div
-      className={`${shimmer} bg-gray-50 relative overflow-hidden border border-gray-200 p-10 my-4 rounded-lg`}
+      className={`${shimmer} bg-gray-50 dark:bg-gray-800 relative overflow-hidden border border-gray-200 dark:border-gray-700 p-10 my-4 rounded-lg`}
     >
-      <div className="h-2 p-1 w-1/4 rounded-md bg-gray-100" />
-      <div className="h-2 p-1 mt-2 w-1/6 rounded-md bg-gray-100" />
-      <div className="mt-2 h-6 w-full rounded-md bg-gray-100" />
+      <div className="h-2 p-1 w-1/4 rounded-md bg-gray-100 dark:bg-gray-700" />
+      <div className="h-2 p-1 mt-2 w-1/6 rounded-md bg-gray-100 dark:bg-gray-700" />
+      <div className="mt-2 h-6 w-full rounded-md bg-gray-100 dark:bg-gray-700" />
     </div>
   );
 }

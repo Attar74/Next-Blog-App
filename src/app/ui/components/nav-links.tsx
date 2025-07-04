@@ -47,6 +47,7 @@ export default function NavLinks({ session }: { session: any }) {
   const filteredLinks = links.filter((link) => {
     return link.requireAuth && !session?.user ? false : true;
   });
+
   return (
     <>
       {filteredLinks.map((link) => {
@@ -56,10 +57,11 @@ export default function NavLinks({ session }: { session: any }) {
             key={link.name}
             href={link.href}
             className={clsx(
-              'flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-purple-100 md:flex-none md:justify-start md:p-2 md:px-3',
+              'flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium transition-colors duration-200 md:flex-none md:justify-start md:p-2 md:px-3 bg-white dark:bg-gray-800',
               {
-                'text-purple-600 bg-purple-50': pathname === link.href,
-                'text-gray-600 hover:text-purple-600 hover:bg-purple-50':
+                'text-purple-600 bg-purple-50 dark:text-purple-400 dark:bg-purple-900/20':
+                  pathname === link.href,
+                'text-gray-600 hover:text-purple-600 hover:bg-purple-50 dark:text-gray-300 dark:hover:text-purple-400 dark:hover:bg-purple-900/20':
                   pathname !== link.href,
               }
             )}

@@ -35,9 +35,9 @@ export default async function Page() {
       {posts.length === 0 ? (
         <div className="text-center py-16">
           <div className="max-w-md mx-auto">
-            <div className="w-24 h-24 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
+            <div className="w-24 h-24 mx-auto mb-4 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
               <svg
-                className="w-12 h-12 text-gray-400"
+                className="w-12 h-12 text-gray-400 dark:text-gray-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -50,10 +50,10 @@ export default async function Page() {
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-700 mb-2">
+            <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">
               No Blogs found
             </h3>
-            <p className="text-gray-500">
+            <p className="text-gray-500 dark:text-gray-400">
               Start writing your first blog post to get started!
             </p>
           </div>

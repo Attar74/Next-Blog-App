@@ -150,7 +150,7 @@ export default function Page() {
   return (
     <div className="py-4 sm:py-8 px-3 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className=" rounded-lg shadow-lg overflow-hidden bg-white dark:bg-gray-900">
           <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-4 sm:px-6 py-3 sm:py-4">
             <h1 className="text-xl sm:text-2xl font-bold text-white">
               Create New Blog Post
@@ -176,7 +176,7 @@ export default function Page() {
                   value={formData.title}
                   onChange={handleChange}
                   placeholder="Enter your blog post title..."
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 text-sm sm:text-base"
                   required
                 />
               </div>
@@ -195,7 +195,7 @@ export default function Page() {
                   value={postContent}
                   onChange={handleChange}
                   placeholder="Write your blog post content here..."
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 resize-vertical text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 resize-vertical text-sm sm:text-base"
                 />
                 {generating && (
                   <div className="mt-3 flex items-center text-sm text-purple-600">
@@ -241,7 +241,7 @@ export default function Page() {
                 <Button
                   type="button"
                   onClick={() => router.push('/blog/posts')}
-                  className="px-4 sm:px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-sm sm:text-base w-full sm:w-auto order-2 sm:order-1"
+                  className="px-4 sm:px-6 py-2 border border-gray-300 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 hover:dark:bg-gray-800 transition-colors duration-200 text-sm sm:text-base w-full sm:w-auto order-2 sm:order-1"
                 >
                   Cancel
                 </Button>

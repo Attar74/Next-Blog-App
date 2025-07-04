@@ -186,7 +186,7 @@ export default function ConfirmationPopup({
 
         {/* Enhanced Modal with Post.tsx inspired styling */}
         <div
-          className={`relative transform overflow-hidden rounded-2xl bg-white/95 backdrop-blur-sm border border-gray-100 text-left shadow-xl hover:shadow-2xl transition-all duration-500 ease-in-out sm:my-8 sm:w-full sm:max-w-lg ${
+          className={`relative transform overflow-hidden rounded-2xl backdrop-blur-sm border border-gray-100 text-left shadow-xl hover:shadow-2xl transition-all duration-500 ease-in-out sm:my-8 sm:w-full sm:max-w-lg ${
             isTransitioning
               ? 'opacity-100 scale-100 translate-y-0'
               : 'opacity-0 scale-95 translate-y-4'
@@ -254,7 +254,7 @@ export default function ConfirmationPopup({
               type="button"
               onClick={onClose}
               disabled={isLoading}
-              className="mt-3 inline-flex w-full justify-center rounded-xl bg-white/80 backdrop-blur-sm px-4 py-3 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200 hover:bg-gray-50 hover:shadow-md focus:outline-offset-0 sm:mt-0 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:-translate-y-0.5"
+              className="mt-3 inline-flex w-full justify-center rounded-xl backdrop-blur-sm px-4 py-3 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200 hover:bg-gray-50 hover:shadow-md focus:outline-offset-0 sm:mt-0 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:-translate-y-0.5"
             >
               {cancelText}
             </button>

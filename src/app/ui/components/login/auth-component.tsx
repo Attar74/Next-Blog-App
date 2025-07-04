@@ -13,7 +13,12 @@ export function SignIn({
         await signIn(provider);
       }}
     >
-      <Button {...props}>Sign In</Button>
+      <Button
+        className="dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:border-gray-600 rounded-full"
+        {...props}
+      >
+        Sign In
+      </Button>
     </form>
   );
 }
@@ -33,9 +38,13 @@ export function SignOut(props: React.ComponentPropsWithRef<typeof Button>) {
       }}
       className="w-full"
     >
-      <Button variant="ghost" className="w-full p-0" {...props}>
+      <Button
+        variant="ghost"
+        className="w-full p-0 dark:bg-transparent dark:hover:bg-gray-800"
+        {...props}
+      >
         <svg
-          className="w-5 h-5 text-gray-600 hover:text-gray-800 cursor-pointer transition-colors"
+          className="w-5 h-5 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 cursor-pointer transition-colors"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
