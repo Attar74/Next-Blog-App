@@ -175,7 +175,7 @@ export default function Header() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-12 h-12 rounded-lg text-gray-600 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 transition-all duration-200 transform hover:scale-105"
+                  className="flex items-center justify-center w-12 h-12 rounded-lg text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 transition-all duration-200 transform hover:scale-105"
                   title={link.name}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
