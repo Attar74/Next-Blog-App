@@ -20,12 +20,12 @@ export default function Home() {
 
   return (
     <main
-      className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 flex flex-col items-center justify-center p-5"
+      className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 flex flex-col items-center justify-center p-5 overflow-y-auto"
       style={{
         height: '100vh',
       }}
     >
-      <div className="max-w-7xl">
+      <div className="max-w-7xl text-center md:text-left mt-[15rem] md:mt-0">
         {/* Header Section */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 my-8">
           <div className="flex items-center gap-3">
