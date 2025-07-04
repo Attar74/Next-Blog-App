@@ -11,7 +11,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="w-full flex-none md:w-64 border-r border-gray-200 dark:border-gray-700">
           <SideNav />
         </div>
-        <div className="flex-grow md:overflow-y-auto p-2 md:px-12 md:py-6">
+        <div className="flex-grow md:overflow-y-auto p-2 md:px-12 md:py-6 bg-white dark:bg-gray-800">
           <div className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 rounded-lg h-full">
             {children}
           </div>
