@@ -84,7 +84,7 @@ export default function ConfirmationPopup({
         return {
           icon: (
             <svg
-              className="w-6 h-6 text-red-600"
+              className="w-6 h-6 text-red-600 dark:text-red-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -98,15 +98,15 @@ export default function ConfirmationPopup({
             </svg>
           ),
           confirmButton:
-            'bg-red-600 hover:bg-red-700 focus:ring-red-500 hover:shadow-lg',
-          iconBg: 'bg-red-50',
-          iconBorder: 'border-red-200',
+            'bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 focus:ring-red-500 dark:focus:ring-red-400 hover:shadow-lg',
+          iconBg: 'bg-red-50 dark:bg-red-900/20',
+          iconBorder: 'border-red-200 dark:border-red-800',
         };
       case 'warning':
         return {
           icon: (
             <svg
-              className="w-6 h-6 text-yellow-600"
+              className="w-6 h-6 text-yellow-600 dark:text-yellow-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -120,15 +120,15 @@ export default function ConfirmationPopup({
             </svg>
           ),
           confirmButton:
-            'bg-yellow-600 hover:bg-yellow-700 focus:ring-yellow-500 hover:shadow-lg',
-          iconBg: 'bg-yellow-50',
-          iconBorder: 'border-yellow-200',
+            'bg-yellow-600 hover:bg-yellow-700 dark:bg-yellow-500 dark:hover:bg-yellow-600 focus:ring-yellow-500 dark:focus:ring-yellow-400 hover:shadow-lg',
+          iconBg: 'bg-yellow-50 dark:bg-yellow-900/20',
+          iconBorder: 'border-yellow-200 dark:border-yellow-800',
         };
       case 'info':
         return {
           icon: (
             <svg
-              className="w-6 h-6 text-blue-600"
+              className="w-6 h-6 text-blue-600 dark:text-blue-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -142,15 +142,15 @@ export default function ConfirmationPopup({
             </svg>
           ),
           confirmButton:
-            'bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 hover:shadow-lg',
-          iconBg: 'bg-blue-50',
-          iconBorder: 'border-blue-200',
+            'bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 focus:ring-blue-500 dark:focus:ring-blue-400 hover:shadow-lg',
+          iconBg: 'bg-blue-50 dark:bg-blue-900/20',
+          iconBorder: 'border-blue-200 dark:border-blue-800',
         };
       default:
         return {
           icon: (
             <svg
-              className="w-6 h-6 text-red-600"
+              className="w-6 h-6 text-red-600 dark:text-red-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -164,9 +164,9 @@ export default function ConfirmationPopup({
             </svg>
           ),
           confirmButton:
-            'bg-red-600 hover:bg-red-700 focus:ring-red-500 hover:shadow-lg',
-          iconBg: 'bg-red-50',
-          iconBorder: 'border-red-200',
+            'bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 focus:ring-red-500 dark:focus:ring-red-400 hover:shadow-lg',
+          iconBg: 'bg-red-50 dark:bg-red-900/20',
+          iconBorder: 'border-red-200 dark:border-red-800',
         };
     }
   };
@@ -178,7 +178,7 @@ export default function ConfirmationPopup({
       <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
         {/* Enhanced Backdrop with blur effect */}
         <div
-          className={`fixed inset-0 bg-gray-500/75 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${
+          className={`fixed inset-0 bg-gray-500/75 dark:bg-gray-900/75 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${
             isOpen ? 'bg-opacity-75' : 'bg-opacity-0'
           }`}
           onClick={handleBackdropClick}
@@ -186,7 +186,7 @@ export default function ConfirmationPopup({
 
         {/* Enhanced Modal with Post.tsx inspired styling */}
         <div
-          className={`relative transform overflow-hidden rounded-2xl backdrop-blur-sm border border-gray-100 text-left shadow-xl hover:shadow-2xl transition-all duration-500 ease-in-out sm:my-8 sm:w-full sm:max-w-lg ${
+          className={`relative transform overflow-hidden rounded-2xl backdrop-blur-sm border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 text-left shadow-xl hover:shadow-2xl transition-all duration-500 ease-in-out sm:my-8 sm:w-full sm:max-w-lg ${
             isTransitioning
               ? 'opacity-100 scale-100 translate-y-0'
               : 'opacity-0 scale-95 translate-y-4'
@@ -202,12 +202,12 @@ export default function ConfirmationPopup({
               </div>
               <div className="mt-4 text-center sm:ml-5 sm:mt-0 sm:text-left">
                 {/* Enhanced Title */}
-                <h3 className="text-xl font-bold leading-6 text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
+                <h3 className="text-xl font-bold leading-6 text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors duration-300">
                   {title}
                 </h3>
                 <div className="mt-3">
                   {/* Enhanced Message */}
-                  <p className="text-base text-gray-700 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
+                  <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">
                     {message}
                   </p>
                 </div>
@@ -216,12 +216,12 @@ export default function ConfirmationPopup({
           </div>
 
           {/* Enhanced Button Container */}
-          <div className="bg-gray-50/80 backdrop-blur-sm px-6 py-4 sm:flex sm:flex-row-reverse sm:px-6 border-t border-gray-100">
+          <div className="bg-gray-50/80 dark:bg-gray-700/80 backdrop-blur-sm px-6 py-4 sm:flex sm:flex-row-reverse sm:px-6 border-t border-gray-100 dark:border-gray-600">
             <button
               type="button"
               onClick={onConfirm}
               disabled={isLoading}
-              className={`inline-flex w-full justify-center rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:-translate-y-0.5 ${typeStyles.confirmButton}`}
+              className={`inline-flex w-full justify-center rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 sm:ml-3 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:-translate-y-0.5 ${typeStyles.confirmButton}`}
             >
               {isLoading ? (
                 <>
@@ -254,7 +254,7 @@ export default function ConfirmationPopup({
               type="button"
               onClick={onClose}
               disabled={isLoading}
-              className="mt-3 inline-flex w-full justify-center rounded-xl backdrop-blur-sm px-4 py-3 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-inset ring-gray-200 hover:bg-gray-50 hover:shadow-md focus:outline-offset-0 sm:mt-0 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:-translate-y-0.5"
+              className="mt-3 inline-flex w-full justify-center rounded-xl backdrop-blur-sm px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 shadow-sm ring-1 ring-inset ring-gray-200 dark:ring-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 hover:shadow-md focus:outline-offset-0 sm:mt-0 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:-translate-y-0.5"
             >
               {cancelText}
             </button>

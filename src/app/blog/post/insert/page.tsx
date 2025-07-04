@@ -176,7 +176,7 @@ export default function Page() {
                   value={formData.title}
                   onChange={handleChange}
                   placeholder="Enter your blog post title..."
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 text-sm sm:text-base text-gray-900 dark:text-white"
                   required
                 />
               </div>
@@ -195,7 +195,7 @@ export default function Page() {
                   value={postContent}
                   onChange={handleChange}
                   placeholder="Write your blog post content here..."
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 resize-vertical text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors duration-200 resize-vertical text-sm sm:text-base text-gray-900 dark:text-white"
                 />
                 {generating && (
                   <div className="mt-3 flex items-center text-sm text-purple-600">
