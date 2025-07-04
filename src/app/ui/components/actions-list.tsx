@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 export default function ActionsList() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
   // Avoid hydration mismatch
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function ActionsList() {
   }
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
   };
 
   return (
@@ -26,7 +26,7 @@ export default function ActionsList() {
         onClick={toggleTheme}
         className="flex items-center justify-center w-10 h-10 rounded-lg text-gray-600 hover:text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 transition-all duration-200 transform hover:scale-105"
       >
-        {theme === 'dark' ? (
+        {resolvedTheme === 'dark' ? (
           <SunIcon className="w-6" />
         ) : (
           <MoonIcon className="w-6" />
