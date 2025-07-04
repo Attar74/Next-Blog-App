@@ -20,16 +20,16 @@ export default function Home() {
 
   return (
     <main
-      className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 flex flex-col items-center justify-center"
+      className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 flex flex-col items-center justify-center p-5"
       style={{
         height: '100vh',
       }}
     >
       <div className="max-w-7xl">
         {/* Header Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 my-8">
           <div className="flex items-center gap-3">
-            <h1 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-4xl font-bold bg-clip-text text-gray-900 dark:text-white">
               Welcome to Our Blog
             </h1>
           </div>
