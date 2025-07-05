@@ -1,4 +1,4 @@
-import { ConnectToDB, getPostsByUser } from '@/app/lib/data';
+import { getPostsByUser } from '@/app/lib/data';
 import { Button } from '@/app/ui/components/button';
 import PostsLayoutToggle from '@/app/ui/components/PostsLayoutToggle';
 import Link from 'next/link';
@@ -7,9 +7,10 @@ import { auth } from '../../../../auth-config';
 export const dynamic = 'force-dynamic';
 
 export default async function Page() {
-  const client = await ConnectToDB();
   const session = await auth();
-  const posts = await getPostsByUser(session);
+  const posts = await getPostsByUser({
+    email: session?.user?.email ?? '',
+  });
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

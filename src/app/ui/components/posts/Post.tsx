@@ -1,5 +1,6 @@
 import { formatDate } from '@/lib/utils/dateUtils';
 import Link from 'next/link';
+import { FiPenTool } from 'react-icons/fi'; // Feather Icons pen
 
 export default function Post({
   id,
@@ -27,19 +28,6 @@ export default function Post({
         <Link href={`/blog/post/${id}`} className="relative z-10 block">
           {title}
         </Link>
-      </div>
-      <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 rounded-full">
-        <div className="bg-gray-50 dark:bg-gray-700 flex items-center gap-2 px-2">
-          <span className="font-medium">by</span>
-          <span className="font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
-            {author}
-          </span>
-          {author === session?.user?.name && (
-            <span className="font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
-              (You)
-            </span>
-          )}
-        </div>
       </div>
 
       <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
@@ -85,6 +73,23 @@ export default function Post({
             </svg>
           </div>
         </Link>
+
+        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 rounded-full">
+          <div className="bg-gray-50 dark:bg-gray-700 flex items-center gap-2 px-2 py-1 rounded-full">
+            <span className="text-gray-700 dark:text-gray-300 rotate-180">
+              <FiPenTool />
+            </span>
+            {author === session?.user?.name ? (
+              <span className="font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+                {author} (You)
+              </span>
+            ) : (
+              <span className="font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
+                {author}
+              </span>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

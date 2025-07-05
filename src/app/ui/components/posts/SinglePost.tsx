@@ -1,5 +1,6 @@
 import { formatDate } from '@/lib/utils/dateUtils';
 import Link from 'next/link';
+import { FaArrowLeft, FaCalendar, FaUser } from 'react-icons/fa';
 import { auth } from '../../../../../auth-config';
 import CopyLinkButton from './CopyLinkButton';
 import DeletePostButton from './DeletePostButton';
@@ -31,33 +32,21 @@ export default async function SinglePost({
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
             <span className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 w-full sm:w-auto justify-center sm:justify-start">
-              <svg
-                className="w-4 h-4 text-purple-600 flex-shrink-0"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clipRule="evenodd"
+              {session?.user?.image ? (
+                <img
+                  src={session?.user?.image}
+                  alt={session?.user?.name ?? ''}
+                  className="w-4 h-4 rounded-full"
                 />
-              </svg>
+              ) : (
+                <FaUser className="text-purple-600" />
+              )}
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300 truncate">
                 {author}
               </span>
             </span>
             <span className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 w-full sm:w-auto justify-center sm:justify-start">
-              <svg
-                className="w-4 h-4 text-blue-600 flex-shrink-0"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <FaCalendar className="text-blue-600" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 {formatDate(date)}
               </span>
@@ -94,19 +83,7 @@ export default async function SinglePost({
           href="/blog/posts"
           className="flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 w-full sm:w-auto justify-center sm:justify-start text-sm sm:text-base"
         >
-          <svg
-            className="w-4 h-4 flex-shrink-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            />
-          </svg>
+          <FaArrowLeft className="w-4 h-4" />
           <span className="font-medium">Back to Posts</span>
         </Link>
       </div>

@@ -28,11 +28,10 @@ export async function getPosts() {
   }
 }
 
-export async function getPostsByUser(session: any) {
+export async function getPostsByUser({ email }: { email: string }) {
   noStore();
   try {
-    const posts =
-      await sql`SELECT * FROM posts WHERE email = ${session?.user?.email}`;
+    const posts = await sql`SELECT * FROM posts WHERE email = ${email}`;
     console.log(posts.rows);
     return posts.rows;
   } catch (error) {
